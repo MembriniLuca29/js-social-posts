@@ -157,7 +157,12 @@ for (let index = 0; index < posts.length; index++) {
     function () {
         likeButton.classList.add("like-button--liked");
         likecounterB.innerHTML = likesInt + 1
-    }
+        id = element["id"]
+        
+        let likedId = [];
+        likedId.push(id)
+        console.log(likedId)
+    },{once : true}
     )
     
 }
