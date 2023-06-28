@@ -154,6 +154,13 @@ for (let index = 0; index < posts.length; index++) {
 
     const persone = document.createElement("span");
     likesCounter.append(persone);
-    persone.innerHTML = " persone" 
+    persone.innerHTML = " persone" ;
 
+    likeButton.addEventListener("click",
+    function () {
+        likeButton.classList.add("like-button--liked")
+    }
+    )
 }
+
+    
