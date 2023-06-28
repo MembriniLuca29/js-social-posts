@@ -137,10 +137,7 @@ for (let index = 0; index < posts.length; index++) {
     likeButtonLabel.className = "like-button__label";
     likeButtonLabel.innerHTML = "Mi Piace";
 
-    const likesInt = element["likes"];
-
-
-
+    let likesInt = element["likes"];
 
     const likesCounter = document.createElement("div");
     likes.append(likesCounter);
@@ -158,9 +155,11 @@ for (let index = 0; index < posts.length; index++) {
 
     likeButton.addEventListener("click",
     function () {
-        likeButton.classList.add("like-button--liked")
+        likeButton.classList.add("like-button--liked");
+        likecounterB.innerHTML = likesInt + 1
     }
     )
+    
 }
 
     
