@@ -13,7 +13,7 @@ const posts = [
     {
         "id": 2,
         "content": "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
-        "media": "https://fastly.picsum.photos/id/593/300/300.jpg?hmac=wyPh1WjUanAHdNW0I2tKYB3tjs2UvCLW07c2q-_1okg",
+        "media": "https://unsplash.it/600/400?image=112",
         "author": {
             "name": "Sofia Perlari",
             "image": "https://unsplash.it/300/300?image=10"
@@ -24,7 +24,7 @@ const posts = [
     {
         "id": 3,
         "content": "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
-        "media": "https://fastly.picsum.photos/id/1063/300/300.jpg?hmac=BymgAm4r__1uWlA5D_pNyUYkFT-6jT4Or85ZwgzImtE",
+        "media": "https://unsplash.it/600/400?image=234",
         "author": {
             "name": "Chiara Passaro",
             "image": "https://unsplash.it/300/300?image=20"
@@ -35,7 +35,7 @@ const posts = [
     {
         "id": 4,
         "content": "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
-        "media": "https://fastly.picsum.photos/id/755/300/300.jpg?hmac=duVK4VRPGNUS2erOrEbTmbTT1vIZp0F18gWWEeu-evc",
+        "media": "https://unsplash.it/600/400?image=24",
         "author": {
             "name": "Luca Formicola",
             "image": null
@@ -46,7 +46,7 @@ const posts = [
     {
         "id": 5,
         "content": "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
-        "media": "https://fastly.picsum.photos/id/313/300/300.jpg?hmac=RF_9wjl0Ly5pOq_YONmPgRzw41FLVyOOxe1Vcjf_4YE",
+        "media": "https://unsplash.it/600/400?image=534",
         "author": {
             "name": "Alessandro Sainato",
             "image": "https://unsplash.it/300/300?image=29"
@@ -81,7 +81,7 @@ for (let index = 0; index < posts.length; index++) {
     postMetaIcon.className = "post-meta__icon";
 
     const profileImg = document.createElement("img");
-    profileImg.src =authorImg["image"];
+    profileImg.src = authorImg["image"];
     postMetaIcon.append(profileImg);
     profileImg.className = "profile-pic";
 
@@ -102,5 +102,58 @@ for (let index = 0; index < posts.length; index++) {
     const postText = document.createElement("div");
     divPost.append(postText);
     postText.className = "post__text";
+    postText.innerHTML = element["content"]
+
+    const postImage = document.createElement("div");
+    divPost.append(postImage);
+    postImage.className = "post__image";
+    
+    const img = document.createElement("img");
+    img.src = element["media"];
+    postImage.append(img);
+    
+    const postFooter = document.createElement("div");
+    divPost.append(postFooter);
+    postFooter.className = "post__footer";
+
+    const likes = document.createElement("div");
+    postFooter.append(likes);
+    likes.className = "likes js-likes";
+
+    const likesCta = document.createElement("div");
+    likes.append(likesCta);
+    likesCta.className = "likes__cta";
+
+    const likeButton = document.createElement("a");
+    likesCta.append(likeButton);
+    likeButton.className = "like-button js-like-button";
+
+    const likeButtonIcon = document.createElement("i");
+    likeButton.append(likeButtonIcon);
+    likeButtonIcon.className = "like-button__icon fas  fa-thumbs-up";
+
+    const likeButtonLabel = document.createElement("span");
+    likeButton.append(likeButtonLabel);
+    likeButtonLabel.className = "like-button__label";
+    likeButtonLabel.innerHTML = "Mi Piace";
+
+    const likesInt = element["likes"];
+
+
+
+
+    const likesCounter = document.createElement("div");
+    likes.append(likesCounter);
+    likesCounter.className = "likes__counter";
+    likesCounter.innerHTML = "Piace a " 
+
+    const likecounterB = document.createElement("b");
+    likesCounter.append(likecounterB);
+    likecounterB.className = "js-likes-conter";
+    likecounterB.innerHTML = likesInt 
+
+    const persone = document.createElement("span");
+    likesCounter.append(persone);
+    persone.innerHTML = " persone" 
 
 }
